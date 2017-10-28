@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/tej99/place-recommender#readme",
   "dependencies": {
+    "i": "^0.3.6",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-google-maps": "^9.2.1"
+    "react-google-maps": "^9.2.1",
+    "superagent": "^3.8.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
