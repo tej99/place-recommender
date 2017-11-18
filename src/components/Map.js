@@ -16,7 +16,7 @@ class Map extends Component {
 
         const MyMapComponent = withGoogleMap(() =>
             <GoogleMap
-                defaultZoom={14}
+                defaultZoom={15}
                 defaultCenter={this.props.center}
                 options={{streetViewControl: false, mapTypeControl: false}}>
                 { markers }

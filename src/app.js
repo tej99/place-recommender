@@ -14,7 +14,7 @@ class App extends Component {
     componentDidMount(){
         console.log('componentDidMount');
 
-        const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.7127753,-74.0059728&key=YOUR_API_KEY_GOES_HERE&radius=3000'
+        const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.7127753,-74.0059728&key=AIzaSyCVONRys22RJpa4nlRez2507rqfbWST5H8&radius=3000'
 
         superagent
             .get(url)
