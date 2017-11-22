@@ -3,12 +3,14 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        app: './src/app.js'
+        app: './src/index.js'
     },
     output: {
-        filename: 'dist/bundle.js',
-        sourceMapFilename: 'dist/bundle.map'
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        sourceMapFilename: 'bundle.map'
     },
+    watch: true,
     devtool: '#source-map',
     module: {
         loaders: [
@@ -17,7 +19,7 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 query:{
-                    presets:['react', 'env']
+                    presets:['react', 'env', 'stage-1']
                 }
             }
         ]

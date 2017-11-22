@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import Map from './components/Map'
-import Places from './components/Places'
-import superagent from 'superagent'
+import React, { Component } from 'react';
+import Map from './components/Map';
+import Places from './components/Places';
+import superagent from 'superagent';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {getPlaces} from './actions/placesActions.js';
 
 class App extends Component {
     constructor(){
@@ -13,6 +15,7 @@ class App extends Component {
     }
     componentDidMount(){
         console.log('componentDidMount');
+        this.props.getPlaces();
 
         const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.7127753,-74.0059728&key=AIzaSyCVONRys22RJpa4nlRez2507rqfbWST5H8&radius=3000'
 
@@ -53,5 +56,14 @@ class App extends Component {
         )
     }
 }
-
-ReactDOM.render(<App />, document.getElementById('app'));
+function mapStateToProps(state){
+    return {
+        places: state.places
+    }
+}
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+        getPlaces: getPlaces
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps) (App);
