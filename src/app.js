@@ -9,27 +9,27 @@ import {getPlaces} from './actions/placesActions.js';
 class App extends Component {
     constructor(){
         super();
-        this.state = {
-            places: []
-        }
+        // this.state = {
+        //     places: []
+        // }
     }
     componentDidMount(){
         console.log('componentDidMount');
         this.props.getPlaces();
 
-        const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.7127753,-74.0059728&key=AIzaSyCVONRys22RJpa4nlRez2507rqfbWST5H8&radius=3000'
-
-        superagent
-            .get(url)
-            .set('Accept', 'text/json')
-            .end((error, response) => {
-
-                const places = response.body.results;
-                console.log(JSON.stringify(places));
-                this.setState({
-                    places: places,
-                })
-            })
+        // const url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.7127753,-74.0059728&key=AIzaSyCVONRys22RJpa4nlRez2507rqfbWST5H8&radius=3000'
+        //
+        // superagent
+        //     .get(url)
+        //     .set('Accept', 'text/json')
+        //     .end((error, response) => {
+        //
+        //         const places = response.body.results;
+        //         console.log(JSON.stringify(places));
+        //         this.setState({
+        //             places: places,
+        //         })
+        //     })
     }
 
     render(){
@@ -45,12 +45,12 @@ class App extends Component {
                 <div >
                     <Map containerElement={<div style={{float: 'left', width: '40vw', height: '100vh', background:'red'}}></div>}
                          center={myLocation}
-                         markers={this.state.places}
+                         markers={this.props.places}
                     />
                 </div>
 
                 <div style={{float: 'left', width:300, height:600}}>
-                    <Places places={this.state.places}/>
+                    <Places places={this.props.places}/>
                 </div>
             </div>
         )
@@ -58,7 +58,7 @@ class App extends Component {
 }
 function mapStateToProps(state){
     return {
-        places: state.places
+        places: state.places.places
     }
 }
 function mapDispatchToProps(dispatch){

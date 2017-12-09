@@ -1,7 +1,7 @@
 export function placesReducers(state={places:[]}, action){
     switch(action.type){
         case "GET_PLACES":
-            return {...state, places: [...state.places]};
+            return {...state, places: [...action.payload]};
             break;
         default:
             return state;
