@@ -41677,4 +41677,4 @@ function placesReducers() {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=dist/bundle.map
+//# sourceMappingURL=bundle.map
