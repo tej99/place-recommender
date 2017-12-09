@@ -1,0 +1,50 @@
+{
+  "name": "place-recommender",
+  "version": "1.0.0",
+  "description": "A project I started to get experience with react.js and to help solve the 'where shall we go?' problem.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "serve ./dist",
+    "watch": "webpack -d --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tej99/place-recommender.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tej99/place-recommender/issues"
+  },
+  "homepage": "https://github.com/tej99/place-recommender#readme",
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5",
+    "babel-preset-stage-1": "^6.24.1",
+    "express": "^4.16.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-google-maps": "^9.2.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "superagent": "^3.8.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "redux-logger": "^3.0.6",
+    "serve": "^6.4.1",
+    "webpack": "^3.8.1"
+  }
+}
